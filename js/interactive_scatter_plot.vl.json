@@ -45,28 +45,30 @@
     }
   ],
   "transform": [
-    {"filter": "datum['Internet Users'] > 0"},
-    {"filter": "datum.Population > Population_Above"},
-    {
-      "filter": "Continent_selection == null || datum.Continent == Continent_selection"
-    },
-    {"filter": "datum['Internet Users per 100'] > 0"}
-  ],
+  {"filter": "datum['Internet Users'] > 0"},
+  {"filter": "datum['GDP per capita'] > 0"},
+  {"filter": "datum.Population > Population_Above"},
+  {
+    "filter": "Continent_selection == null || datum.Continent == Continent_selection"
+  }
+]
+,
   "encoding": {
     "x": {
       "field": "Internet Users",
       "type": "quantitative",
       "title": "Number of Internet Users",
       "axis": {"tickCount": 7},
-      "scale": {"type": "log", "domain": [1, 10000000]}
+      "scale": {"type": "log", "domain": [10, 1000000000]}
     },
     "y": {
-      "field": "Internet Users per 100",
+      "field": "GDP per capita",
       "type": "quantitative",
-      "title": "Internet Users per 100 People",
+      "title": "GDP per capita (USD)",
       "axis": {"tickCount": 6},
-      "scale": {"domain": [0, 100]}
-    }
+      "scale": {"type": "log", "domain": [10, 10000000]}
+}
+
   },
   "layer": [
     {
@@ -135,7 +137,7 @@
         "tooltip": [
           {"field": "Country", "type": "nominal"},
           {"field": "Internet Users", "type": "quantitative", "format": ","},
-          {"field": "Population", "type": "quantitative", "format": ","},
+          {"field": "GDP per capita", "type": "quantitative", "format": ","},
           {"field": "Internet Users per 100", "type": "quantitative", "format": ".2f"}
         ]
       }
