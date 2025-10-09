@@ -1,0 +1,68 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_Homework_Week_10/refs/heads/main/data/internet_bandwidth.json"
+  },
+  "vconcat": [
+    {
+      "width": 600,
+      "height": 260,
+      "mark": {"type": "area", "interpolate": "monotone"},
+      "title": "Global Internet Bandwidth Consumption by Content Type (2015–2023)",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal",
+          "scale": {"domain": {"param": "brush"}},
+          "axis": {"title": "Year", "tickCount": 9}
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "bandwidth_exabytes",
+          "stack": "zero",
+          "axis": {"title": "Bandwidth Usage (Exabytes/month)"}
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "title": "Content Type",
+          "scale": {
+            "domain": ["Video Streaming", "Gaming", "Social Media", "Web Browsing", "File Sharing"],
+            "range": ["#8dd3c7", "#ffffb3", "#bebada", "#fb8072", "#80b1d3"]
+          },
+          "legend": {"orient": "bottom", "title": "Content Type"}
+        },
+        "tooltip": [
+          {"field": "category", "type": "nominal", "title": "Content Type"},
+          {"aggregate": "sum", "field": "bandwidth_exabytes", "type": "quantitative", "title": "Bandwidth (EB/month)"},
+          {"field": "year", "type": "temporal", "title": "Year"}
+        ]
+      }
+    },
+    {
+      "width": 600,
+      "height": 60,
+      "mark": "line",
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+      ],
+      "encoding": {
+        "x": {"field": "year", "type": "temporal", "axis": {"title": null}},
+        "y": {
+          "aggregate": "sum",
+          "field": "bandwidth_exabytes",
+          "axis": {"grid": false, "title": null}
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": ["Video Streaming", "Gaming", "Social Media", "Web Browsing", "File Sharing"],
+            "range": ["#8dd3c7", "#ffffb3", "#bebada", "#fb8072", "#80b1d3"]
+          }
+        }
+      }
+    }
+  ]
+}
