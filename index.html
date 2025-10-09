@@ -41,11 +41,31 @@
             margin-bottom: 15px;
             color: #444;
         }
+        
+        /* Balanced rendering for crisp but smooth charts */
+        canvas {
+            image-rendering: auto;
+        }
+        
+        svg {
+            shape-rendering: geometricPrecision;
+        }
+        
+        /* Ensure proper scaling for Vega visualizations */
+        .vega-embed {
+            width: 100%;
+        }
+        
+        .vega-embed canvas,
+        .vega-embed svg {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Internet Users Analysis 2015</h1>
+        <h1>The Global Internet Landscape</h1>
         
         <div class="visualization">
             <div class="vis-title">World Map: Internet Users per 100 People by Country</div>
@@ -56,14 +76,31 @@
             <div class="vis-title">Scatter Plot: Internet Users vs GDP per Capita</div>
             <div id="scatter-vis"></div>
         </div>
+        
+        <div class="visualization">
+            <div class="vis-title">Radial Tree: Economic Sectors Structure</div>
+            <div id="radial-tree-vis"></div>
+        </div>
+        
+        <div class="visualization">
+            <div class="vis-title">Area Chart: Global Internet Bandwidth Consumption by Content Type</div>
+            <div id="area-chart-vis"></div>
+        </div>
     </div>
     
     <script type="text/javascript">
+        // Configuration options for balanced rendering quality
+        const vegaOptions = {
+            renderer: 'canvas', // Use canvas for smoother rendering
+            scaleFactor: Math.min(window.devicePixelRatio || 1, 2), // Cap scale factor for balance
+            actions: false // Hide action menu for cleaner look
+        };
+        
         // Load and embed the map visualization
         fetch('./js/visualization.vl.json')
             .then(response => response.json())
             .then(mapSpec => {
-                vegaEmbed('#map-vis', mapSpec)
+                vegaEmbed('#map-vis', mapSpec, vegaOptions)
                     .then(result => {
                         console.log("Map visualization rendered successfully");
                     })
@@ -79,7 +116,7 @@
         fetch('./js/interactive_scatter_plot.vl.json')
             .then(response => response.json())
             .then(scatterSpec => {
-                vegaEmbed('#scatter-vis', scatterSpec)
+                vegaEmbed('#scatter-vis', scatterSpec, vegaOptions)
                     .then(result => {
                         console.log("Scatter plot visualization rendered successfully");
                     })
@@ -89,6 +126,38 @@
             })
             .catch(error => {
                 console.error("Error loading scatter plot specification:", error);
+            });
+        
+        // Load and embed the radial tree visualization
+        fetch('./js/radial_tree.json')
+            .then(response => response.json())
+            .then(radialTreeSpec => {
+                vegaEmbed('#radial-tree-vis', radialTreeSpec, vegaOptions)
+                    .then(result => {
+                        console.log("Radial tree visualization rendered successfully");
+                    })
+                    .catch(error => {
+                        console.error("Error rendering radial tree visualization:", error);
+                    });
+            })
+            .catch(error => {
+                console.error("Error loading radial tree specification:", error);
+            });
+        
+        // Load and embed the area chart visualization
+        fetch('./js/area_chart.json')
+            .then(response => response.json())
+            .then(areaChartSpec => {
+                vegaEmbed('#area-chart-vis', areaChartSpec, vegaOptions)
+                    .then(result => {
+                        console.log("Area chart visualization rendered successfully");
+                    })
+                    .catch(error => {
+                        console.error("Error rendering area chart visualization:", error);
+                    });
+            })
+            .catch(error => {
+                console.error("Error loading area chart specification:", error);
             });
     </script>
 </body>
