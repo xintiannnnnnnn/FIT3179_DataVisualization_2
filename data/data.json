@@ -1,0 +1,54 @@
+[
+  { "id": "i0", "parent": null, "name": "Global Internet Users", "path": "Global Internet Users" },
+
+  { "id": "i1", "parent": "i0", "name": "Access & Connectivity", "path": "Global Internet Users > Access & Connectivity" },
+  { "id": "i1.1", "parent": "i1", "name": "Broadband Access", "path": "Global Internet Users > Access & Connectivity > Broadband Access" },
+  { "id": "i1.1.1", "parent": "i1.1", "name": "Fixed Broadband", "path": "Global Internet Users > Access & Connectivity > Broadband Access > Fixed Broadband" },
+  { "id": "i1.1.2", "parent": "i1.1", "name": "Mobile Broadband", "path": "Global Internet Users > Access & Connectivity > Broadband Access > Mobile Broadband" },
+  { "id": "i1.2", "parent": "i1", "name": "Network Coverage", "path": "Global Internet Users > Access & Connectivity > Network Coverage" },
+  { "id": "i1.2.1", "parent": "i1.2", "name": "Urban Coverage", "path": "Global Internet Users > Access & Connectivity > Network Coverage > Urban Coverage" },
+  { "id": "i1.2.2", "parent": "i1.2", "name": "Rural Coverage", "path": "Global Internet Users > Access & Connectivity > Network Coverage > Rural Coverage" },
+  { "id": "i1.3", "parent": "i1", "name": "Internet Speed", "path": "Global Internet Users > Access & Connectivity > Internet Speed" },
+  { "id": "i1.3.1", "parent": "i1.3", "name": "Average Download Speed", "path": "Global Internet Users > Access & Connectivity > Internet Speed > Average Download Speed" },
+  { "id": "i1.3.2", "parent": "i1.3", "name": "Average Upload Speed", "path": "Global Internet Users > Access & Connectivity > Internet Speed > Average Upload Speed" },
+
+  { "id": "i2", "parent": "i0", "name": "Digital Activities", "path": "Global Internet Users > Digital Activities" },
+  { "id": "i2.1", "parent": "i2", "name": "Social Media", "path": "Global Internet Users > Digital Activities > Social Media" },
+  { "id": "i2.1.1", "parent": "i2.1", "name": "Facebook", "path": "Global Internet Users > Digital Activities > Social Media > Facebook" },
+  { "id": "i2.1.2", "parent": "i2.1", "name": "Instagram", "path": "Global Internet Users > Digital Activities > Social Media > Instagram" },
+  { "id": "i2.1.3", "parent": "i2.1", "name": "TikTok", "path": "Global Internet Users > Digital Activities > Social Media > TikTok" },
+  { "id": "i2.2", "parent": "i2", "name": "Online Shopping", "path": "Global Internet Users > Digital Activities > Online Shopping" },
+  { "id": "i2.2.1", "parent": "i2.2", "name": "E-commerce Websites", "path": "Global Internet Users > Digital Activities > Online Shopping > E-commerce Websites" },
+  { "id": "i2.2.2", "parent": "i2.2", "name": "Mobile Commerce", "path": "Global Internet Users > Digital Activities > Online Shopping > Mobile Commerce" },
+  { "id": "i2.3", "parent": "i2", "name": "Streaming & Entertainment", "path": "Global Internet Users > Digital Activities > Streaming & Entertainment" },
+  { "id": "i2.3.1", "parent": "i2.3", "name": "Video Streaming", "path": "Global Internet Users > Digital Activities > Streaming & Entertainment > Video Streaming" },
+  { "id": "i2.3.2", "parent": "i2.3", "name": "Music Streaming", "path": "Global Internet Users > Digital Activities > Streaming & Entertainment > Music Streaming" },
+
+  { "id": "i3", "parent": "i0", "name": "Devices & Technology", "path": "Global Internet Users > Devices & Technology" },
+  { "id": "i3.1", "parent": "i3", "name": "Smartphones", "path": "Global Internet Users > Devices & Technology > Smartphones" },
+  { "id": "i3.2", "parent": "i3", "name": "Computers", "path": "Global Internet Users > Devices & Technology > Computers" },
+  { "id": "i3.3", "parent": "i3", "name": "Tablets", "path": "Global Internet Users > Devices & Technology > Tablets" },
+  { "id": "i3.4", "parent": "i3", "name": "IoT Devices", "path": "Global Internet Users > Devices & Technology > IoT Devices" },
+
+  { "id": "i4", "parent": "i0", "name": "Online Services", "path": "Global Internet Users > Online Services" },
+  { "id": "i4.1", "parent": "i4", "name": "Email Services", "path": "Global Internet Users > Online Services > Email Services" },
+  { "id": "i4.2", "parent": "i4", "name": "Cloud Storage", "path": "Global Internet Users > Online Services > Cloud Storage" },
+  { "id": "i4.3", "parent": "i4", "name": "Online Banking", "path": "Global Internet Users > Online Services > Online Banking" },
+  { "id": "i4.4", "parent": "i4", "name": "Education Platforms", "path": "Global Internet Users > Online Services > Education Platforms" },
+
+  { "id": "i5", "parent": "i0", "name": "Cybersecurity & Privacy", "path": "Global Internet Users > Cybersecurity & Privacy" },
+  { "id": "i5.1", "parent": "i5", "name": "Data Protection", "path": "Global Internet Users > Cybersecurity & Privacy > Data Protection" },
+  { "id": "i5.2", "parent": "i5", "name": "Online Fraud", "path": "Global Internet Users > Cybersecurity & Privacy > Online Fraud" },
+  { "id": "i5.3", "parent": "i5", "name": "Phishing & Malware", "path": "Global Internet Users > Cybersecurity & Privacy > Phishing & Malware" },
+  { "id": "i5.4", "parent": "i5", "name": "Password Security", "path": "Global Internet Users > Cybersecurity & Privacy > Password Security" },
+
+  { "id": "i6", "parent": "i0", "name": "Infrastructure & Data", "path": "Global Internet Users > Infrastructure & Data" },
+  { "id": "i6.1", "parent": "i6", "name": "Data Centers", "path": "Global Internet Users > Infrastructure & Data > Data Centers" },
+  { "id": "i6.2", "parent": "i6", "name": "Content Delivery Networks", "path": "Global Internet Users > Infrastructure & Data > Content Delivery Networks" },
+  { "id": "i6.3", "parent": "i6", "name": "Cloud Infrastructure", "path": "Global Internet Users > Infrastructure & Data > Cloud Infrastructure" },
+
+  { "id": "i7", "parent": "i0", "name": "Emerging Trends", "path": "Global Internet Users > Emerging Trends" },
+  { "id": "i7.1", "parent": "i7", "name": "5G Adoption", "path": "Global Internet Users > Emerging Trends > 5G Adoption" },
+  { "id": "i7.2", "parent": "i7", "name": "AI in Internet Services", "path": "Global Internet Users > Emerging Trends > AI in Internet Services" },
+  { "id": "i7.3", "parent": "i7", "name": "Metaverse & Virtual Worlds", "path": "Global Internet Users > Emerging Trends > Metaverse & Virtual Worlds" }
+]
