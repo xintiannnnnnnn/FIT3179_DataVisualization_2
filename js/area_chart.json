@@ -1,20 +1,21 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {
-    "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_Homework_Week_10/refs/heads/main/data/internet_bandwidth.json"
-  },
+  "data": {"url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_Homework_Week_10/refs/heads/main/data/internet_bandwidth.json"},
+  "transform": [
+    {"filter": "year(datum.year) >= 2015 && year(datum.year) <= 2023"}
+  ],
   "vconcat": [
     {
-      "width": 600,
+      "width": 700,
       "height": 260,
-      "mark": {"type": "area", "interpolate": "monotone"},
+      "mark": {"type": "area", "interpolate": "monotone", "opacity": 1.0},
       "title": "Global Internet Bandwidth Consumption by Content Type (2015–2023)",
       "encoding": {
         "x": {
           "field": "year",
-          "type": "temporal",
-          "scale": {"domain": {"param": "brush"}},
-          "axis": {"title": "Year", "tickCount": 9}
+          "type": "ordinal",
+          "scale": {"domain": {"param": "brush"}, "padding": 0},
+          "axis": {"title": "Year", "labelAngle": 0}
         },
         "y": {
           "aggregate": "sum",
@@ -28,39 +29,42 @@
           "title": "Content Type",
           "scale": {
             "domain": ["Video Streaming", "Gaming", "Social Media", "Web Browsing", "File Sharing"],
-            "range": ["#8dd3c7", "#ffffb3", "#bebada", "#fb8072", "#80b1d3"]
+            "range": ["#e74c3c", "#3498db", "#2ecc71", "#f39c12", "#9b59b6"]
           },
-          "legend": {"orient": "bottom", "title": "Content Type"}
+          "legend": {"orient": "right", "title": "Content Type"}
         },
         "tooltip": [
           {"field": "category", "type": "nominal", "title": "Content Type"},
           {"aggregate": "sum", "field": "bandwidth_exabytes", "type": "quantitative", "title": "Bandwidth (EB/month)"},
-          {"field": "year", "type": "temporal", "title": "Year"}
+          {"field": "year", "type": "ordinal", "title": "Year"}
         ]
       }
     },
     {
-      "width": 600,
-      "height": 60,
-      "mark": "line",
+      "width": 700,
+      "height": 30,
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 18,
+        "text": "Use this line chart to filter out the data based on time"
+      }
+    
+    },
+    {
+      "width": 700,
+      "height": 80,
+      "mark": {"type": "line", "color": "#7A7978"},
       "params": [
         {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
       ],
       "encoding": {
-        "x": {"field": "year", "type": "temporal", "axis": {"title": null}},
+        "x": {"field": "year", "type": "ordinal", "scale": {"padding": 0}, "axis": {"title": null, "labelAngle": 0}},
         "y": {
           "aggregate": "sum",
           "field": "bandwidth_exabytes",
-          "axis": {"grid": false, "title": null}
-        },
-        "color": {
-          "field": "category",
-          "type": "nominal",
-          "legend": null,
-          "scale": {
-            "domain": ["Video Streaming", "Gaming", "Social Media", "Web Browsing", "File Sharing"],
-            "range": ["#8dd3c7", "#ffffb3", "#bebada", "#fb8072", "#80b1d3"]
-          }
+          "axis": {"grid": false, "title": "Total Bandwidth"}
         }
       }
     }
