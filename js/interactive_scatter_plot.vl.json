@@ -64,7 +64,7 @@
     "y": {
       "field": "GDP per capita",
       "type": "quantitative",
-      "title": "GDP per capita (USD)",
+      "title": "Gross Domestic Product per capita (USD)",
       "axis": {"tickCount": 6},
       "scale": {"type": "log", "domain": [10, 10000000]}
 }
@@ -140,6 +140,57 @@
           {"field": "GDP per capita", "type": "quantitative", "format": ","},
           {"field": "Internet Users per 100", "type": "quantitative", "format": ".2f"}
         ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_Homework_Week_10/refs/heads/main/data/number_of_internet_users_with_continent.csv"
+      },
+      "transform": [
+        {"filter": "datum['Internet Users'] > 0"},
+        {"filter": "datum['GDP per capita'] > 0"},
+        {"filter": "datum['Country'] == 'Singapore'"}
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dx": 0,
+        "dy": -40,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#040404",
+        "stroke": "white",
+        "strokeWidth": 0.1
+      },
+      "encoding": {
+        "x": {"field": "Internet Users", "type": "quantitative"},
+        "y": {"field": "GDP per capita", "type": "quantitative"},
+        "text": {"value": ["Singapore has high GDP and strong Internet", "penetration despite small population"]}
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_Homework_Week_10/refs/heads/main/data/number_of_internet_users_with_continent.csv"
+      },
+      "transform": [
+        {"filter": "datum['Internet Users'] > 0"},
+        {"filter": "datum['GDP per capita'] > 0"},
+        {"filter": "datum['Country'] == 'Singapore'"},
+        {"calculate": "datum['GDP per capita'] * 1.4", "as": "arrow_y"},
+        {"calculate": "datum['Internet Users'] - 2500000", "as": "arrow_x"}
+      ],
+      "mark": {
+        "type": "point",
+        "size": 400,
+        "shape": "triangle-down",
+        "color": "#040404",
+        "strokeWidth": 2,
+        "fill": "#040404"
+      },
+      "encoding": {
+        "x": {"field": "arrow_x", "type": "quantitative"},
+        "y": {"field": "arrow_y", "type": "quantitative"}
       }
     }
   ]
