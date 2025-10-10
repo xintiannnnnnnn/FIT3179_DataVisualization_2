@@ -155,7 +155,7 @@
         "type": "text",
         "align": "center",
         "baseline": "bottom",
-        "dx": 0,
+        "dx": -30,
         "dy": -40,
         "fontSize": 11,
         "fontWeight": "bold",
