@@ -75,6 +75,111 @@
           }
         ]
       }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 12,
+        "fontStyle": "italic",
+        "color": "#040404"
+        
+      },
+      "encoding": {
+        "x": {"value": 470},
+        "y": {"value": 315},
+        "text": {"value": "Africa still lags behind in 2015"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 12,
+        "fontStyle": "italic",
+        "color": "#040404"
+        
+      },
+      "encoding": {
+        "x": {"value": 310},
+        "y": {"value": 110},
+        "text": {"value": ["High internet penetration", "in North America", "and Europe"]}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "fontStyle": "italic",
+        "color": "#040404",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "x": {"value": 170},
+        "y": {"value": 185},
+        "text": {"value": "AMERICA"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "fontStyle": "italic",
+        "color": "#040404",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "x": {"value": 350},
+        "y": {"value": 70},
+        "text": {"value": "EUROPE"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "fontStyle": "italic",
+        "color": "#040404",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "x": {"value": 390},
+        "y": {"value": 220},
+        "text": {"value": "AFRICA"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "fontStyle": "italic",
+        "color": "#040404",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "x": {"value": 590},
+        "y": {"value": 270},
+        "text": {"value": "AUSTRALIA"}
+      }
     }
+    
   ]
 } 
