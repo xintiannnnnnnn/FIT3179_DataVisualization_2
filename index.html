@@ -7,13 +7,13 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Georgia, 'Times New Roman', serif;
             margin: 20px;
             background-color: #f5f5f5;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             background-color: white;
             padding: 20px;
@@ -24,7 +24,19 @@
         h1 {
             text-align: center;
             color: #333;
-            margin-bottom: 30px;
+            margin-bottom: 8px;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 700; /* render as bold */
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            font-style: normal;
+            margin-bottom: 35px;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 400;
         }
         
         .visualization {
@@ -36,13 +48,60 @@
         }
         
         .vis-title {
-            font-size: 18px;
+            font-size: 22px;
             font-weight: bold;
             margin-bottom: 15px;
             color: #444;
         }
         
-        /* Balanced rendering for crisp but smooth charts */
+        .vis-description {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 12px;
+            line-height: 1.45;
+        }
+
+        /* Ensure descriptive paragraphs use a sans-serif for clarity */
+        .desc-main,
+        .desc-note,
+        .vis-description {
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        }
+
+        .vis-desc-row {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+
+        /* Left: short, prominent highlight */
+        .desc-main {
+            flex: 0 0 40%;
+            color: #1f2937; /* dark slate */
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.35;
+        }
+
+        /* Right: explanatory context, visually secondary (no divider) */
+        .desc-note {
+            flex: 1 1 55%;
+            color: #4b5563; /* medium gray */
+            font-size: 14px;
+            line-height: 1.6;
+            padding-left: 0; /* removed divider padding */
+            border-left: none; /* remove vertical divider */
+        }
+
+        @media (max-width: 760px) {
+            .vis-desc-row { flex-direction: column; align-items: stretch; }
+            .desc-main { flex-basis: auto; margin-bottom: 8px; }
+            .desc-note { padding-left: 0; border-left: none; }
+        }
+        
+        /* Balanced rendering for smooth, clear charts */
         canvas {
             image-rendering: auto;
         }
@@ -66,33 +125,51 @@
 <body>
     <div class="container">
         <h1>The Global Internet Landscape</h1>
+        <div class="subtitle">Exploring Digital Connectivity Across Nations</div>
         
         <div class="visualization">
-            <div class="vis-title">World Map: Internet Users per 100 People by Country</div>
+            <div class="vis-title">Global Internet Penetration by Country</div>
+        <div class="vis-desc-row">
+            <div class="desc-note">This choropleth map displays the number of internet users per 100 people by country in 2015, with darker orange indicating higher penetration. It shows strong connectivity in North America, Europe and parts of Oceania.</div>
+            <div class="desc-note">While much of Africa and some lower-income regions remain lightly colored, this provides a clear snapshot of the global digital divide that can help prioritize infrastructure investment, policy action, and targeted research.</div>
+        </div>
             <div id="map-vis"></div>
         </div>
         
         <div class="visualization">
-            <div class="vis-title">Scatter Plot: Internet Users vs Gross Domestic Product per Capita</div>
+            <div class="vis-title">Internet Users vs Gross Domestic Product per Capita</div>
+        <div class="vis-desc-row">
+            <div class="desc-note">This scatter plot examines the relationship between economic prosperity and internet adoption across countries.</div>
+            <div class="desc-note">It reveals a strong positive correlation: wealthier nations tend to have higher percentages of internet users. </div>
+
+        </div>
             <div id="scatter-vis"></div>
         </div>
         
         <div class="visualization">
-            <div class="vis-title">Radial Tree: Economic Sectors Structure</div>
+            <div class="vis-title">Mapping the Digital Economy: Radial Visualization of Internet Sector Interconnections</div>
+        <div class="vis-desc-row">
+            <div class="desc-note">This radial tree diagram offers a visual overview of the structural relationships within the digital economy.</div>
+        </div>    
             <div id="radial-tree-vis"></div>
         </div>
         
         <div class="visualization">
-            <div class="vis-title">Area Chart: Global Internet Bandwidth Consumption by Content Type</div>
+            <div class="vis-title">Global Internet Bandwidth Consumption by Content Type</div>
+
+        <div class="vis-desc-row">
+            <div class="desc-note">This area chart illustrates the trends in global internet bandwidth consumption from 2015 to 2023, broken down by content type such as video streaming, gaming, social media, web browsing, and file sharing.</div>
+            <div class="desc-note">It highlights the dominant influence of video streaming on overall bandwidth usage and allows users to filter data by year for a clearer view of how each category has evolved over time.</div>
+        </div> 
             <div id="area-chart-vis"></div>
         </div>
     </div>
     
     <script type="text/javascript">
-        // Configuration options for balanced rendering quality
+        // Configuration options for balanced, smooth rendering
         const vegaOptions = {
-            renderer: 'canvas', // Use canvas for smoother rendering
-            scaleFactor: Math.min(window.devicePixelRatio || 1, 2), // Cap scale factor for balance
+            renderer: 'svg', // Use SVG for clean rendering
+            scaleFactor: Math.min(window.devicePixelRatio || 1, 1.5), // Moderate scaling for balance
             actions: false // Hide action menu for cleaner look
         };
         
