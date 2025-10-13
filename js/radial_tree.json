@@ -2,13 +2,13 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "Radial Tree Layout of Economic Sectors with Tooltips",
   "width": 1080,
-  "height": 1080,
+  "height": 1000,
   "padding": 5,
   "autosize": "none",
 
   "signals": [
     { "name": "labels", "value": true, "bind": {"input": "checkbox"} },
-    { "name": "radius", "value": 275, "bind": {"input": "range", "min": 20, "max": 600} },
+    { "name": "radius", "value": 335, "bind": {"input": "range", "min": 20, "max": 600} },
     { "name": "extent", "value": 360, "bind": {"input": "range", "min": 0, "max": 360, "step": 1} },
     { "name": "rotate", "value": 0, "bind": {"input": "range", "min": 0, "max": 360, "step": 1} },
     { "name": "layout", "value": "cluster", "bind": {"input": "radio", "options": ["cluster", "tidy"]} },
@@ -23,7 +23,7 @@
   "data": [
     {
       "name": "tree",
-      "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_Homework_Week_10/refs/heads/main/data/data.json",
+      "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_DataVisualization_2/refs/heads/main/data/data.json",
       "transform": [
         { "type": "stratify", "key": "id", "parentKey": "parent" },
         {
