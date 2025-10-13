@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {"url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_Homework_Week_10/refs/heads/main/data/internet_bandwidth.json"},
+  "data": {"url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_DataVisualization_2/refs/heads/main/data/internet_bandwidth.json"},
   "transform": [
     {"filter": "year(datum.year) >= 2015 && year(datum.year) <= 2023"}
   ],
