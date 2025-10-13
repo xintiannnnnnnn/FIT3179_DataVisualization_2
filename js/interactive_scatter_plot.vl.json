@@ -4,7 +4,7 @@
   "height": 600,
   "title": "Number of Internet Users per Country (2015)",
   "data": {
-    "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_Homework_Week_10/refs/heads/main/data/number_of_internet_users_with_continent.csv"
+    "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_DataVisualization_2/refs/heads/main/data/number_of_internet_users_with_continent.csv"
   },
   "params": [
     {
@@ -137,7 +137,7 @@
         "tooltip": [
           {"field": "Country", "type": "nominal"},
           {"field": "Internet Users", "type": "quantitative", "format": ","},
-          {"field": "GDP per capita", "type": "quantitative", "format": ","},
+          {"field": "Population", "type": "quantitative", "format": ","},
           {"field": "Internet Users per 100", "type": "quantitative", "format": ".2f"}
         ]
       }
