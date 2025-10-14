@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Number of Internet Users per Country Population in 2015",
+  "title": "Number of Internet Users per Country Population in 2020",
   "width": 800,
   "height": 400,
   "projection": {"type": "equalEarth"},
@@ -89,7 +89,7 @@
       "encoding": {
         "x": {"value": 470},
         "y": {"value": 315},
-        "text": {"value": "Africa still lags behind in 2015"}
+        "text": {"value": "Africa still lags behind in 2020"}
       }
     },
     {
