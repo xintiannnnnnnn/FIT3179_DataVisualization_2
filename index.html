@@ -67,6 +67,12 @@
         .vis-description {
             font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
         }
+        
+        /* Style for highlighted interaction terms */
+        .interaction-highlight {
+            font-weight: bold;
+            color: #d32f2f;
+        }
 
         .vis-desc-row {
             display: flex;
@@ -120,6 +126,27 @@
             max-width: 100%;
             height: auto;
         }
+        
+        /* Footer styling */
+        .footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            line-height: 1.5;
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        }
+        
+        .footer a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -131,7 +158,7 @@
             <div class="vis-title">Global Internet Penetration by Country</div>
         <div class="vis-desc-row">
             <div class="desc-note">This choropleth map displays the number of internet users per 100 people by country in 2020, with darker orange indicating higher penetration. It shows strong connectivity in North America, Europe and parts of Oceania.</div>
-            <div class="desc-note">While much of Africa and some lower-income regions remain lightly colored, this provides a clear snapshot of the global digital divide that can help prioritize infrastructure investment, policy action, and targeted research.</div>
+            <div class="desc-note">While much of Africa and some lower-income regions remain lightly colored, this provides a clear snapshot of the global digital divide that can help prioritize infrastructure investment and targeted research.</div>
         </div>
             <div id="map-vis"></div>
         </div>
@@ -155,13 +182,36 @@
         </div>
         
         <div class="visualization">
+            <div class="vis-title">Desktop vs Mobile vs Tablet Market Share Worldwide</div>
+        <div class="vis-desc-row">
+            <div class="desc-note">This line chart tracks the monthly market share evolution of desktop, mobile, and tablet devices throughout 2020.</div>
+            <div class="desc-note">Mobile usage remained dominant while desktop and tablet fluctuated, highlighting the ongoing shift toward mobile-first internet access patterns.</div>
+        </div>    
+            <div id="line-chart-vis"></div>
+        </div>
+        
+        <div class="visualization">
             <div class="vis-title">Global Internet Bandwidth Consumption by Content Type</div>
 
         <div class="vis-desc-row">
-            <div class="desc-note">This area chart illustrates the trends in global internet bandwidth consumption from 2020 to 2023, broken down by content type such as video streaming, gaming, social media, web browsing, and file sharing.</div>
-            <div class="desc-note">It highlights the dominant influence of video streaming on overall bandwidth usage and allows users to filter data by year for a clearer view of how each category has evolved over time.</div>
-        </div> 
+            <div class="desc-note">This area chart illustrates the trends in global internet bandwidth consumption from 2020 to 2023.</div>
+            <div class="desc-note">The bottom line chart provides <span class="interaction-highlight">brushing interaction</span>, allowing users to explore specific time periods by highlighting them in the upper graph.</div>
+                
+        </div>
             <div id="area-chart-vis"></div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Chia Xin Tian | FIT3179, Monash University</p>
+            <p>Sources obtained from:</p>
+            <p><a href="https://www.kaggle.com/datasets/sansuthi/gapminder-internet" target="_blank">1. Global Internet Usage</a></p>
+            <p><a href="https://www.kaggle.com/datasets/ashishraut64/internet-users" target="_blank">2. Global Internet User</a></p>
+            <p><a href="https://www.itu.int/en/ITU-D/Statistics/pages/stat/default.aspx" target="_blank">3.  Global and regional Internet connectivity data</a></p>
+            <p><a href="https://www.sandvine.com/phenomena" target="_blank">4. Global Internet Phenomena Report</a></p>
+            <p><a href="https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/worldwide/2020" target="_blank">5. Global Platform Market Share</a></p>
+        </div>
+        </div>
+        </div>
         </div>
     </div>
     
@@ -219,6 +269,22 @@
             })
             .catch(error => {
                 console.error("Error loading radial tree specification:", error);
+            });
+        
+        // Load and embed the line chart visualization
+        fetch('./js/line_chart.json')
+            .then(response => response.json())
+            .then(lineChartSpec => {
+                vegaEmbed('#line-chart-vis', lineChartSpec, vegaOptions)
+                    .then(result => {
+                        console.log("Line chart visualization rendered successfully");
+                    })
+                    .catch(error => {
+                        console.error("Error rendering line chart visualization:", error);
+                    });
+            })
+            .catch(error => {
+                console.error("Error loading line chart specification:", error);
             });
         
         // Load and embed the area chart visualization
