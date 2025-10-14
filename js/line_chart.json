@@ -1,0 +1,130 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Desktop vs Mobile vs Tablet Market Share Worldwide",
+    "fontSize": 14,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "color": "#444"
+  },
+  "width": 1000,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_DataVisualization_2/refs/heads/main/data/comparison-ww-monthly-202001-202012.csv"
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "fold": ["Mobile", "Desktop", "Tablet"],
+          "as": ["Device", "Market_Share"]
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "point": true,
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal",
+          "timeUnit": "yearmonth",
+          "axis": {
+            "title": "",
+            "labelAngle": -45,
+            "format": "%b %Y",
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "Market_Share",
+          "type": "quantitative",
+          "axis": {
+            "title": "",
+            "format": ".0f",
+            "grid": true,
+            "gridOpacity": 0.3,
+            "values": [0, 12, 24, 36, 48, 60],
+            "labelExpr": "datum.value + '%'"
+          },
+          "scale": {
+            "domain": [0, 60]
+          }
+        },
+        "color": {
+          "field": "Device",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Mobile", "Desktop", "Tablet"],
+            "range": ["#4CAF50", "#2196F3", "#9C27B0"]
+          },
+          "legend": {
+            "title": null,
+            "orient": "bottom",
+            "direction": "horizontal",
+            "symbolType": "circle",
+            "symbolSize": 100
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Date",
+            "type": "temporal",
+            "title": "Month",
+            "format": "%b %Y"
+          },
+          {
+            "field": "Device",
+            "type": "nominal",
+            "title": "Device Type"
+          },
+          {
+            "field": "Market_Share",
+            "type": "quantitative",
+            "title": "Market Share",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"Date": "2020-11-01", "Market_Share": 52.95, "Device": "Mobile"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dy": -15,
+        "dx": -350,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#040404"
+      },
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal",
+          "timeUnit": "yearmonth"
+        },
+        "y": {
+          "field": "Market_Share",
+          "type": "quantitative"
+        },
+        "text": {"value": "Mobile usage overtook desktop in late 2020, maintaining dominance thereafter"}
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelFontSize": 12
+    }
+  }
+}
