@@ -57,7 +57,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["Mobile", "Desktop", "Tablet"],
-            "range": ["#4CAF50", "#2196F3", "#9C27B0"]
+            "range": ["#e41a1c", "#2196F3", "#9C27B0"]
           },
           "legend": {
             "title": null,
