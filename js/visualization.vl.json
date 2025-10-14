@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Number of Internet Users per Country Population in 2020",
-  "width": 800,
+  "width": 900,
   "height": 400,
   "projection": {"type": "equalEarth"},
   "data": {
@@ -81,7 +81,7 @@
         "type": "text",
         "align": "center",
         "baseline": "middle",
-        "fontSize": 12,
+        "fontSize": 13,
         "fontStyle": "italic",
         "color": "#040404"
         
@@ -97,13 +97,13 @@
         "type": "text",
         "align": "center",
         "baseline": "middle",
-        "fontSize": 12,
+        "fontSize": 13,
         "fontStyle": "italic",
         "color": "#040404"
         
       },
       "encoding": {
-        "x": {"value": 310},
+        "x": {"value": 350},
         "y": {"value": 110},
         "text": {"value": ["High internet penetration", "in North America", "and Europe"]}
       }
@@ -121,7 +121,7 @@
         "strokeWidth": 0.5
       },
       "encoding": {
-        "x": {"value": 170},
+        "x": {"value": 220},
         "y": {"value": 185},
         "text": {"value": "AMERICA"}
       }
@@ -139,7 +139,7 @@
         "strokeWidth": 0.5
       },
       "encoding": {
-        "x": {"value": 350},
+        "x": {"value": 390},
         "y": {"value": 70},
         "text": {"value": "EUROPE"}
       }
@@ -157,7 +157,7 @@
         "strokeWidth": 0.5
       },
       "encoding": {
-        "x": {"value": 390},
+        "x": {"value": 440},
         "y": {"value": 220},
         "text": {"value": "AFRICA"}
       }
@@ -175,7 +175,7 @@
         "strokeWidth": 0.5
       },
       "encoding": {
-        "x": {"value": 590},
+        "x": {"value": 640},
         "y": {"value": 270},
         "text": {"value": "AUSTRALIA"}
       }
