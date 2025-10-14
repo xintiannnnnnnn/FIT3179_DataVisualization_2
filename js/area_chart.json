@@ -2,14 +2,14 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {"url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_DataVisualization_2/refs/heads/main/data/internet_bandwidth.json"},
   "transform": [
-    {"filter": "year(datum.year) >= 2015 && year(datum.year) <= 2023"}
+    {"filter": "year(datum.year) >= 2020 && year(datum.year) <= 2023"}
   ],
   "vconcat": [
     {
       "width": 700,
       "height": 260,
       "mark": {"type": "area", "interpolate": "monotone", "opacity": 1.0},
-      "title": "Global Internet Bandwidth Consumption by Content Type (2015–2023)",
+      "title": "Global Internet Bandwidth Consumption by Content Type (2020–2023)",
       "encoding": {
         "x": {
           "field": "year",
@@ -29,7 +29,7 @@
           "title": "Content Type",
           "scale": {
             "domain": ["Video Streaming", "Gaming", "Social Media", "Web Browsing", "File Sharing"],
-            "range": ["#e74c3c", "#3498db", "#2ecc71", "#f39c12", "#9b59b6"]
+            "range": ["#e41a1c", "#984ea3", "#ff7f00", "#a6cee3", "#377eb8"]
           },
           "legend": {"orient": "right", "title": "Content Type"}
         },
