@@ -8,37 +8,87 @@
     {
       "width": 800,
       "height": 260,
-      "mark": {"type": "area", "interpolate": "monotone", "opacity": 1.0},
       "title": "Global Internet Bandwidth Consumption by Content Type (2020–2023)",
-      "encoding": {
-        "x": {
-          "field": "year",
-          "type": "ordinal",
-          "scale": {"domain": {"param": "brush"}, "padding": 0},
-          "axis": {"title": "Year", "labelAngle": 0}
+      "layer": [
+        {
+          "mark": {"type": "area", "interpolate": "monotone", "opacity": 1.0},
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "ordinal",
+              "scale": {"domain": {"param": "brush"}, "padding": 0},
+              "axis": {"title": "Year", "labelAngle": 0}
+            },
+            "y": {
+              "aggregate": "sum",
+              "field": "bandwidth_exabytes",
+              "stack": "zero",
+              "axis": {"title": "Bandwidth Usage (Exabytes/month)"}
+            },
+            "color": {
+              "field": "category",
+              "type": "nominal",
+              "title": "Content Type",
+              "scale": {
+                "domain": ["Video Streaming", "Gaming", "Social Media", "Web Browsing", "File Sharing"],
+                "range": ["#e41a1c", "#984ea3", "#ff7f00", "#a6cee3", "#377eb8"]
+              },
+              "legend": {"orient": "right", "title": "Content Type"}
+            },
+            "tooltip": [
+              {"field": "category", "type": "nominal", "title": "Content Type"},
+              {"aggregate": "sum", "field": "bandwidth_exabytes", "type": "quantitative", "title": "Bandwidth (EB/month)"},
+              {"field": "year", "type": "ordinal", "title": "Year"}
+            ]
+          }
         },
-        "y": {
-          "aggregate": "sum",
-          "field": "bandwidth_exabytes",
-          "stack": "zero",
-          "axis": {"title": "Bandwidth Usage (Exabytes/month)"}
-        },
-        "color": {
-          "field": "category",
-          "type": "nominal",
-          "title": "Content Type",
-          "scale": {
-            "domain": ["Video Streaming", "Gaming", "Social Media", "Web Browsing", "File Sharing"],
-            "range": ["#e41a1c", "#984ea3", "#ff7f00", "#a6cee3", "#377eb8"]
+        {
+          "data": {"values": [{}]},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "fontStyle": "Arial",
+            "color": "#040404"
           },
-          "legend": {"orient": "right", "title": "Content Type"}
+          "encoding": {
+            "x": {"value": 20},
+            "y": {"value": 40},
+            "text": {"value": "Video streaming dominates, consistently consuming 60-75% of total bandwidth"}
+          }
         },
-        "tooltip": [
-          {"field": "category", "type": "nominal", "title": "Content Type"},
-          {"aggregate": "sum", "field": "bandwidth_exabytes", "type": "quantitative", "title": "Bandwidth (EB/month)"},
-          {"field": "year", "type": "ordinal", "title": "Year"}
-        ]
-      }
+        {
+          "data": {"values": [{}]},
+          "mark": {
+            "type": "rule",
+            "color": "black",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "x": {"value": 90},
+            "y": {"value": 50},
+            "x2": {"value": 200},
+            "y2": {"value": 120}
+          }
+        },
+        {
+          "data": {"values": [{}]},
+          "mark": {
+            "type": "point",
+            "shape": "triangle-down",
+            "size": 250,
+            "color": "black",
+            "filled": true,
+            "angle": 80
+          },
+          "encoding": {
+            "x": {"value": 200},
+            "y": {"value": 120}
+          }
+        }
+      ]
     },
     {
       "width": 800,
