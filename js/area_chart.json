@@ -81,7 +81,7 @@
             "size": 250,
             "color": "black",
             "filled": true,
-            "angle": 80
+            "angle": 72
           },
           "encoding": {
             "x": {"value": 200},
