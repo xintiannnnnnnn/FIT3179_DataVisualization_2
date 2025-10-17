@@ -1,12 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Desktop vs Mobile vs Tablet Market Share Worldwide",
-    "fontSize": 14,
-    "fontWeight": "bold",
-    "anchor": "middle",
-    "color": "#444"
-  },
   "width": 1000,
   "height": 400,
   "data": {
@@ -72,7 +65,7 @@
             "field": "Date",
             "type": "temporal",
             "title": "Month",
-            "format": "%b %Y"
+            "format": "%B"
           },
           {
             "field": "Device",
