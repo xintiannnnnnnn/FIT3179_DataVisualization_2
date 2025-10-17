@@ -183,7 +183,8 @@
       "mark": {
         "type": "point",
         "size": 400,
-        "shape": "triangle-down",
+        "shape": "arrow",
+        "angle": 180,
         "color": "#040404",
         "strokeWidth": 2,
         "fill": "#040404"
