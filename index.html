@@ -44,16 +44,16 @@
             margin: 50px auto;
             padding: 40px 30px 30px 30px;
             background: #fff;
-            border-radius: 16px;
+            border-radius: 16px;      /*round the corner*/
             box-shadow:
-                0 4px 10px rgba(255, 140, 0, 0.10),
+                0 4px 10px rgba(255, 140, 0, 0.10),  /*orange-tinted shadows*/
                 0 8px 20px rgba(255, 140, 0, 0.13),
                 0 12px 40px rgba(255, 140, 0, 0.08);
             border: 1.5px solid #fefae0;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease;       /*hover effect*/
         }
         
-        .visualization:hover {
+        .visualization:hover {         /*effect of the box lifting*/
             box-shadow:
                 0 8px 20px rgba(255, 140, 0, 0.18),
                 0 12px 30px rgba(255, 140, 0, 0.20),
@@ -82,21 +82,13 @@
             font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
         }
 
+        /* Neat horizontal layout*/
         .vis-desc-row {
             display: flex;
             gap: 25px;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 14px;
-        }
-
-        /* Left: short, prominent highlight */
-        .desc-main {
-            flex: 0 0 40%;
-            color: #1f2937; /* dark slate */
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 1.35;
         }
 
         /* Right: explanatory context, visually secondary (no divider) */
@@ -110,9 +102,7 @@
         }
 
         @media (max-width: 760px) {
-            .vis-desc-row { flex-direction: column; align-items: stretch; }
-            .desc-main { flex-basis: auto; margin-bottom: 8px; }
-            .desc-note { padding-left: 0; border-left: none; }
+            .vis-desc_row { flex-direction: column; align-items: stretch; }
         }
         
         /* Balanced rendering for smooth, clear charts */
