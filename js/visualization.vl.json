@@ -63,7 +63,16 @@
     "#dd510c",
     "#c14307",
   "#9e3605"]
-          }
+  
+          },
+          "legend": {
+    "title": "Internet Users per 100 people",
+    "orient": "right",
+    "titleFontSize": 12,
+    "labelFontSize": 11,
+    "symbolSize": 100,
+    "gradientLength": 200
+  }
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
