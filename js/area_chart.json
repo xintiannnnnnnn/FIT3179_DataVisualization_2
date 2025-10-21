@@ -12,6 +12,7 @@
       "layer": [
         {
           "mark": {"type": "area", "interpolate": "monotone", "opacity": 1.0},
+
           "encoding": {
             "x": {
               "field": "year",
