@@ -38,8 +38,8 @@
             "format": ".0f",
             "grid": true,
             "gridOpacity": 0.3,
-            "values": [0, 12, 24, 36, 48, 60],
-            "labelExpr": "datum.value + '%'"
+            "values": [0, 12, 24, 36, 48, 60],   
+            "labelExpr": "datum.value + '%'"  
           },
           "scale": {
             "domain": [0, 60]
