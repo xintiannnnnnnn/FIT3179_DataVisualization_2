@@ -80,7 +80,8 @@
           {
             "field": "Internet Users per 100",
             "type": "quantitative",
-            "format": ".2f"
+            "format": ".2f",
+            "title": "Internet Users per 100 people"
           }
         ]
       }
