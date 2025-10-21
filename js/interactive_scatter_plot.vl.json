@@ -218,7 +218,7 @@
       "encoding": {
         "x": {"field": "Internet Users", "type": "quantitative"},
         "y": {"field": "GDP per capita", "type": "quantitative"},
-        "text": {"value": ["China's large population", "drives the world's", "highest number", "of Internet users", "even though", "Internet per 100 people", "is moderate."]}
+        "text": {"value": ["China's large population", "drives the world's", "highest number", "of Internet users", "even though", "Internet users per 100 ", "people is moderate."]}
       }
     },
     {
