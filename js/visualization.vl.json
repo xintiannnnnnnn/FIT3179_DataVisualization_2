@@ -189,6 +189,21 @@
         "y": {"value": 270},
         "text": {"value": "AUSTRALIA"}
       }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 13,
+        "fontStyle": "italic",
+        "color": "#040404"
+      },
+      "encoding": {
+        "x": {"value": 640},
+        "y": {"value": 290},
+        "text": {"value": ["High connectivity ","despite low", "population density"]}
+      }
     }
     
   ]
