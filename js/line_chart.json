@@ -84,7 +84,7 @@
     {
       "data": {
         "values": [
-          {"Date": "2020-11-01", "Market_Share": 52.95, "Device": "Mobile"}
+          {"Date": "2020-11-01", "Market_Share": 52.95}
         ]
       },
       "mark": {
@@ -108,6 +108,34 @@
           "type": "quantitative"
         },
         "text": {"value": "Mobile usage overtook desktop in late 2020, maintaining dominance thereafter"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"Date": "2020-06-01", "Market_Share": 5}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -20,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#040404"
+      },
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal",
+          "timeUnit": "yearmonth"
+        },
+        "y": {
+          "field": "Market_Share",
+          "type": "quantitative"
+        },
+        "text": {"value": "Tablet share stayed below 5%, showing limited user adoption despite larger screens."}
       }
     }
   ],
