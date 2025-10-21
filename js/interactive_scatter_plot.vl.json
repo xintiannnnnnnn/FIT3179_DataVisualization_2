@@ -111,7 +111,7 @@
           {"field": "Country", "type": "nominal"},
           {"field": "Internet Users", "type": "quantitative", "format": ","},
           {"field": "Population", "type": "quantitative", "format": ","},
-          {"field": "Internet Users per 100", "type": "quantitative", "format": ".2f"}
+          {"field": "Internet Users per 100", "type": "quantitative", "format": ".2f","title": "Internet Users per 100 people"}
         ]
       }
     },
@@ -138,7 +138,7 @@
           {"field": "Country", "type": "nominal"},
           {"field": "Internet Users", "type": "quantitative", "format": ","},
           {"field": "Population", "type": "quantitative", "format": ","},
-          {"field": "Internet Users per 100", "type": "quantitative", "format": ".2f"}
+          {"field": "Internet Users per 100", "type": "quantitative", "format": ".2f", "title": "Internet Users per 100 people"}
         ]
       }
     },
@@ -192,6 +192,57 @@
       "encoding": {
         "x": {"field": "arrow_x", "type": "quantitative"},
         "y": {"field": "arrow_y", "type": "quantitative"}
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_Homework_Week_10/refs/heads/main/data/number_of_internet_users_with_continent.csv"
+      },
+      "transform": [
+        {"filter": "datum['Internet Users'] > 0"},
+        {"filter": "datum['GDP per capita'] > 0"},
+        {"filter": "datum['Country'] == 'China'"}
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dx": -50,
+        "dy": 80,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#040404",
+        "stroke": "white",
+        "strokeWidth": 0.1
+      },
+      "encoding": {
+        "x": {"field": "Internet Users", "type": "quantitative"},
+        "y": {"field": "GDP per capita", "type": "quantitative"},
+        "text": {"value": ["China's large population", "drives the world's", "highest number", "of Internet users", "even though", "Internet per 100 people", "is moderate."]}
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_Homework_Week_10/refs/heads/main/data/number_of_internet_users_with_continent.csv"
+      },
+      "transform": [
+        {"filter": "datum['Internet Users'] > 0"},
+        {"filter": "datum['GDP per capita'] > 0"},
+        {"filter": "datum['Country'] == 'China'"},
+        {"calculate": "datum['Internet Users'] - 50000000", "as": "line_x2"},
+        {"calculate": "datum['GDP per capita'] * 0.2", "as": "line_y2"},
+        {"calculate": "datum['GDP per capita'] * 0.77", "as": "line_y1"}
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "black",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {"field": "Internet Users", "type": "quantitative"},
+        "y": {"field": "line_y1", "type": "quantitative"},
+        "x2": {"field": "line_x2", "type": "quantitative"},
+        "y2": {"field": "line_y2", "type": "quantitative"}
       }
     }
   ]
