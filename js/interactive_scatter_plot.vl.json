@@ -177,21 +177,21 @@
         {"filter": "datum['Internet Users'] > 0"},
         {"filter": "datum['GDP per capita'] > 0"},
         {"filter": "datum['Country'] == 'Singapore'"},
-        {"calculate": "datum['GDP per capita'] * 1.4", "as": "arrow_y"},
-        {"calculate": "datum['Internet Users'] - 2500000", "as": "arrow_x"}
+    {"calculate": "datum['Internet Users'] * 0.5", "as": "line_x1"},
+        {"calculate": "datum['Internet Users'] * 0.5", "as": "line_x2"},
+        {"calculate": "datum['GDP per capita']* 1.9", "as": "line_y2"},
+        {"calculate": "datum['GDP per capita'] * 1.2", "as": "line_y1"}
       ],
       "mark": {
-        "type": "point",
-        "size": 400,
-        "shape": "arrow",
-        "angle": 180,
+        "type": "rule",
         "color": "#040404",
-        "strokeWidth": 2,
-        "fill": "#040404"
+        "strokeWidth": 2
       },
       "encoding": {
-        "x": {"field": "arrow_x", "type": "quantitative"},
-        "y": {"field": "arrow_y", "type": "quantitative"}
+          "x": {"field": "line_x1", "type": "quantitative"},
+        "y": {"field": "line_y1", "type": "quantitative"},
+        "x2": {"field": "line_x2"},
+        "y2": {"field": "line_y2"}
       }
     },
     {
@@ -241,8 +241,8 @@
       "encoding": {
         "x": {"field": "Internet Users", "type": "quantitative"},
         "y": {"field": "line_y1", "type": "quantitative"},
-        "x2": {"field": "line_x2", "type": "quantitative"},
-        "y2": {"field": "line_y2", "type": "quantitative"}
+        "x2": {"field": "line_x2"},
+        "y2": {"field": "line_y2"}
       }
     }
   ]
